@@ -1,0 +1,199 @@
+/* ------------------------------- Formulario para crear recordatorio ----------------------------------*/
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --text-color: #1f2937;
+    --border-color: #d1d5db;
+    --background-color: #f9fafb;
+    --success-color: #10b981;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: rgb(237, 231, 218);
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--text-color);
+    font-size: 22px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.toggle-label {
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--success-color);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--success-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.status-text {
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.button-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 150px;
+    margin: 20px auto 0 auto; /* top auto bottom auto */
+    width: 100%;
+}
+
+.btn-cancel {
+    display: inline-block;
+    background-color: rgb(168, 168, 168);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn-cancel:hover {
+    background-color: rgb(102, 102, 102);
+}
+
+.btn-guardar {
+    display: inline-block;
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn-guardar:hover {
+    background-color: rgb(0, 0, 148);
+}
+
+.required::after {
+    content: " *";
+    color: red;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    textarea {
+        font-size: 14px;
+    }
+}

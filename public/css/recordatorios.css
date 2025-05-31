@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.container {
+    max-width: 1430px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #dec8ae;
+    border-bottom: 1px solid #eaeaea;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn-create {
+    background-color: #4361ee;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-create:hover {
+    background-color: #3a56d4;
+}
+
+.btn-delete-selected {
+    background-color: #ef476f;
+    color: white;
+}
+
+.btn-delete-selected:hover {
+    background-color: #d63d62;
+}
+
+.search-bar {
+    flex-grow: 1;
+    position: relative;
+    margin-right: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 16px 8px 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.filter-select {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.view-options {
+    display: flex;
+    gap: 5px;
+}
+
+.view-btn {
+    padding: 6px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #666;
+}
+
+.view-btn.active {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.selection-bar {
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 14px;
+    color: #666;
+}
+
+.reminders-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    min-height: 300px;
+}
+
+.list-view .reminders-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgb(241, 236, 222);
+}
+
+.reminder:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    text-align: center;
+    color: #888;
+    width: 100%;
+}
+
+.empty-state i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.empty-state h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #666;
+}
+
+.empty-state p {
+    font-size: 14px;
+    max-width: 400px;
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-bar {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .filters {
+        flex-wrap: wrap;
+    }
+}
+
+
+
+
+.reminders-container {
+    display: grid;
+    gap: 1rem;
+    background-color: rgb(241, 236, 222);
+    height: 420px; /* o el alto que necesites */
+    overflow-y: auto;
+}
+
+
+.reminders-container.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container:not(.list-view) .reminder .reminder-icon {
+    font-size: 2.8rem;
+    color: #4a90e2;
+    margin-bottom: 1rem;
+}
+
+.container.list-view .reminder .note-icon {
+    font-size: 1.3rem;
+    color: #4a90e2;
+}
+
+.container.list-view .reminder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem; /* espacio entre ícono y texto */
+    height: auto; /* opcional, por si quieres que se adapte al contenido */
+}
+
+.container.list-view .reminder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem;
+    margin-bottom: 0.1rem;
+}
+
+
+/* Para alinear título e ícono verticalmente */
+.container.list-view .reminder .reminder-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+
+.container.list-view .reminder .left-dos {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #555;
+    margin-left: 2rem;
+}
+
+.container.list-view .reminder .left-dos .activado {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #44d500;
+}
+
+.container:not(.list-view) .reminder .left-dos .activado {
+    color: #44d500;
+}
+
+.container.list-view .reminder .left-dos .noactivado {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #929292;
+}
+
+.container:not(.list-view) .reminder .left-dos .noactivado {
+    text-align: right;
+    color: #929292;
+}
+
+/* Opcional: estilizar el lado derecho */
+.container.list-view .reminder .reminder-right {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.container.list-view .reminders-container {
+    grid-template-columns: 1fr;
+}
+
+.container:not(.list-view) .reminders-container {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.reminder {
+    background: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    width: 100%;
+    height: 180px;
+    cursor: pointer;
+}
+
+.container:not(.list-view) .reminder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* opcional, para centrar texto */
+}
+
+.selection-bar {
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+    gap: 1rem;            /* Espacio entre botón y texto */
+}
+
+
+.btn-select-all {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-select-all:hover {
+    background-color: #e0e0e0;
+}
+
+
+/* ------------------------------ Para mostrar los checkbox -------------------------------- */
+.container.list-view.selection-mode .reminder {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.container:not(.list-view).selection-mode .reminder {
+    position: relative;
+}
+
+
+.reminder-checkbox {
+    position: absolute;
+    top: 1rem;
+    left: 0.5rem;
+    width: 1.2rem;
+}
+
+
+
+
+
+
+
+
+

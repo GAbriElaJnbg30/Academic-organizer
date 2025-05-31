@@ -1,0 +1,184 @@
+/* Estilos generales para la vista-manual de ambos uusarios */
+.vista-manual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    max-width: 1250px;
+    width: 90%;
+    margin: 10px auto; /* Centrado dentro del contenedor principal */
+    color: #fff;
+    animation: fadeIn 1s ease-in-out;
+    background-image: linear-gradient(135deg, #1f1c2c, #928dab); /* Fondo degradado exclusivo */
+}
+
+/* Contenedor Uno (Texto y PDF) */
+.vista-manual .contenedor-uno {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+}
+
+.vista-manual .titulo-manual {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffde59; /* Amarillo vibrante */
+    margin-bottom: 15px;
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.vista-manual .titulo-manual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.vista-manual .titulo-manual i {
+    margin-right: 10px;
+    color: #ffde59;
+}
+
+.titulo-manual .nombre-usuario {
+    margin-left: 8px;
+}
+
+.vista-manual .subtitulo-manual {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.vista-manual .informacion-manual p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    line-height: 1.8;
+}
+
+.vista-manual .avatar-usuario img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* Mensaje motivacional */
+.vista-manual .mensaje-bienvenida {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+/* Botón PDF */
+.vista-manual .btn-manualpdf {
+    margin-top: 20px;
+    padding: 12px 15px;
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vista-manual .btn-manualpdf:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.vista-manual .iconpdf {
+    margin-right: 10px;
+}
+
+/* Contenedor Dos (Video) */
+.vista-manual .contenedor-dos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.vista-manual .video-tutorial {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 15px;
+    margin-top: 15px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* Botón Descargar */
+.vista-manual .btn-descargar {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: linear-gradient(45deg, #36d1dc, #5b86e5);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vista-manual .btn-descargar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.vista-manual .icon {
+    margin-right: 10px;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .vista-manual {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 10px; /* Padding ajustado para pantallas más pequeñas */
+    }
+
+    .vista-manual .contenedor-uno {
+        border-right: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .vista-manual .video-tutorial {
+        max-height: 200px;
+    }
+}
+

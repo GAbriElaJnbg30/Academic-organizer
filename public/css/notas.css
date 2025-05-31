@@ -1,0 +1,531 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1430px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn-create {
+    background-color: #4361ee;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-create:hover {
+    background-color: #3a56d4;
+}
+
+.btn-delete-selected {
+    background-color: #ef476f;
+    color: white;
+}
+
+.btn-delete-selected:hover {
+    background-color: #d63d62;
+}
+
+.btn-save {
+    background-color: #070807;
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #484848;
+}
+
+.btn-download {
+    background-color: #0ab40d;
+    color: white;
+}
+
+.btn-download:hover {
+    background-color: #008507;
+}
+
+.search-bar {
+    flex-grow: 1;
+    position: relative;
+    margin-right: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 16px 8px 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.filter-select {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.view-options {
+    display: flex;
+    gap: 5px;
+}
+
+.view-btn {
+    padding: 6px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #666;
+}
+
+.view-btn.active {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.selection-bar {
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 14px;
+    color: #666;
+}
+
+.notes-container { 
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    min-height: 300px;
+}
+
+.list-view .notes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.note-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/*.note-date {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #888;
+    text-align: right;
+}*/
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    text-align: center;
+    color: #888;
+    width: 100%;
+}
+
+.empty-state i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.empty-state h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #666;
+}
+
+.empty-state p {
+    font-size: 14px;
+    max-width: 400px;
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-bar {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .filters {
+        flex-wrap: wrap;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.notes-container {
+    display: grid;
+    gap: 1rem;
+    background-color: rgb(255, 255, 255);
+    height: 420px; /* o el alto que necesites */
+    overflow-y: auto;
+}
+
+.notes-container.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container:not(.list-view) .note-card .note-icon {
+    font-size: 2.8rem;
+    color: #4a90e2;
+    margin-bottom: 1rem;
+}
+
+/* Opcional: ocultar el ícono en vista de lista */
+.container.list-view .note-card .note-icon {
+    font-size: 1.3rem;
+    color: #4a90e2;
+}
+
+.container.list-view .note-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem; /* espacio entre ícono y texto */
+    height: auto; /* opcional, por si quieres que se adapte al contenido */
+}
+
+.container.list-view .note-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem;
+    margin-bottom: 0.1rem;
+}
+
+/* Para alinear título e ícono verticalmente */
+.container.list-view .note-card .note-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Opcional: estilizar el lado derecho */
+.container.list-view .note-card .note-right {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
+
+
+
+
+
+.container.list-view .notes-container {
+    grid-template-columns: 1fr;
+}
+
+.container:not(.list-view) .notes-container {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.note-card {
+    background: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    width: 100%;
+    height: 180px;
+    cursor: pointer;
+}
+
+
+.container:not(.list-view) .note-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* opcional, para centrar texto */
+}
+
+.selection-bar {
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+    gap: 1rem;            /* Espacio entre botón y texto */
+}
+
+.btn-select-all {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-select-all:hover {
+    background-color: #e0e0e0;
+}
+
+
+
+
+
+/* ------------------------------ Para mostrar los checkbox -------------------------------- */
+.container.list-view.selection-mode .note-card {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.container:not(.list-view).selection-mode .note-card {
+    position: relative;
+}
+
+
+.note-checkbox {
+    position: absolute;
+    top: 1rem;
+    left: 0.5rem;
+    width: 1.2rem;
+}
+
+
+
+/* --------------------------------- Modal -------------------------------------------------- */
+/* Fondo del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Contenido del modal */
+  .modal-content {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Animación de aparición */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Título del modal */
+  .modal-content h4 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333333;
+  }
+  
+  /* Etiquetas y selectores */
+  .modal-content label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #555555;
+  }
+  
+  .modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  /* Mensaje de error */
+  .modal-content .error {
+    margin-top: 10px;
+    color: #e74c3c;
+    font-size: 0.9rem;
+  }
+  
+  /* Botones */
+  .modal-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal-content .guardar {
+    background-color: #2ecc71;
+    color: #ffffff;
+    margin-right: 10px;
+  }
+  
+  .modal-content .guardar:hover {
+    background-color: #27ae60;
+  }
+  
+  .modal-content .cancelar {
+    background-color: #e74c3c;
+    color: #ffffff;
+  }
+  
+  .modal-content .cancelar:hover {
+    background-color: #c0392b;
+  }
+  
+
+
+
+  .modal-content {
+    background: #ffffff;
+    padding: 20px 25px; /* Más compacto */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Título del modal */
+  .modal-content h4 {
+    margin-top: 0;
+    font-size: 1.2rem; /* Reducido */
+    color: #333333;
+  }
+  
+  /* Etiquetas y selectores */
+  .modal-content label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+    color: #555555;
+    font-size: 0.95rem;
+  }
+  
+  .modal-content select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+  }
+  
+  /* Botones */
+  .modal-content button {
+    margin-top: 2px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  

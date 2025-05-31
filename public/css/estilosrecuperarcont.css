@@ -1,0 +1,226 @@
+.container {
+    width: 100%; 
+    max-width: 450px; /* Establece un máximo para que no sea demasiado grande */
+    margin: 3rem auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    background-color: #fff;
+    text-align: center; /* Centra el contenido dentro del contenedor */
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 1.4rem;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container input {
+    width: 50%; /* Ajusta el ancho del input */
+    padding: 10px 20px;
+    padding-left: 40px; /* Espacio para el icono */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 auto; /* Centra el input */
+    display: block; /* Asegura que el input sea un bloque */
+}
+
+.input-container .icon-email {
+    position: absolute;
+    top: 50%;
+    left: 5.9rem;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+}
+
+button {
+    width: 20%; /* Ajusta el ancho del botón */
+    padding: 10px;
+    background-color: #007bff; /* Color azul */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 2rem; /* Separación superior */
+    display: block; /* Asegura que el botón sea un bloque */
+    margin-left: auto;
+    margin-right: auto; /* Centra el botón */
+    font-size: 14px;
+}
+
+
+button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+}
+
+.success-message {
+    color: green;
+    font-size: 14px;
+}
+
+.container-dos {
+    width: 100%; 
+    max-width: 450px; /* Establece un máximo para que no sea demasiado grande */
+    margin: 3rem auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    background-color: #fff;
+    text-align: center; /* Centra el contenido dentro del contenedor */
+}
+
+.input-contraseña {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.input-contraseña input {
+    width: 68%;
+    padding: 10px 40px; /* Espacio para el ícono */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding-right: 40px; /* Espacio para el icono */
+}
+
+.icon-eye {
+    position: absolute;
+    right: 5.3rem; /* Alineado a la derecha */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.icon-contraseña {
+    position: absolute;
+    top: 50%;
+    left: 5.4rem; /* Ajusta según el padding del input */
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 18px;
+    pointer-events: none; /* Para evitar interferir con el clic */
+}
+
+.error-mess {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 5px;
+    position: absolute; /* Fija el mensaje sin afectar el flujo del input */
+    left: 0;
+}
+
+.reestablecer {
+    width: 25%; /* Ajusta el ancho del botón */
+    padding: 10px;
+    background-color: #007bff; /* Color azul */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 2rem; /* Separación superior */
+    display: block; /* Asegura que el botón sea un bloque */
+    margin-left: auto;
+    margin-right: auto; /* Centra el botón */
+    font-size: 14px;
+}
+
+
+.reestablecer:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+@media (max-width: 680px) {
+    .container-recuperar {
+        padding: 20px 15px;
+        margin: 50px;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .input-group input {
+        font-size: 0.5rem;
+    }
+
+    button {
+        font-size: 0.95rem;
+        padding: 10px;
+        width: 75px;
+    }
+
+    .input-container input {
+        width: 180px;
+        font-size: 13px;
+    }
+
+    .container {
+        margin: 50px;
+        width: 330px;
+    }
+
+    .container-dos {
+        margin: 50px;
+        width: 330px;
+    }
+
+    .input-container .icon-email {
+        position: absolute;
+        top: 50%;
+        left: 3.6rem;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: #888;
+    }
+
+    .input-contraseña input {
+        width: 250px;
+        padding: 10px 40px; /* Espacio para el ícono */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 13px;
+        box-sizing: border-box;
+        padding-right: 40px; /* Espacio para el icono */
+    }
+    
+    .icon-eye {
+        position: absolute;
+        right: 3.3rem; /* Alineado a la derecha */
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #999;
+        font-size: 13px;
+    }
+    
+    .icon-contraseña {
+        position: absolute;
+        top: 50%;
+        left: 3.4rem; /* Ajusta según el padding del input */
+        transform: translateY(-50%);
+        color: #999;
+        font-size: 14px;
+        pointer-events: none; /* Para evitar interferir con el clic */
+    }
+
+    .reestablecer {
+        width: 100px;
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .input-contraseña {
+        position: relative;
+        margin-bottom: 20px;
+    }
+}

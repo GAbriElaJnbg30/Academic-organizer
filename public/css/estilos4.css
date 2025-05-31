@@ -1,0 +1,219 @@
+/*----------------------------------------- ACTUALIZAR PERFIL USUARIO ---------------------------------------*/
+.contperfil {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.tituloact {
+    color: #1877f2;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: black;
+}
+
+.input-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    position: absolute;
+    left: 10px;
+    color: black;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="file"],
+select {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #dddfe2;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select {
+    width: 91%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #dddfe2;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="file"]:focus,
+select:focus {
+    outline: none;
+    border-color: #1877f2;
+    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+}
+
+.current-photo {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #1877f2;
+}
+
+button[type="submit"] {
+    background-color: #1877f2;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #166fe5;
+}
+
+.input-icon input {
+    margin-right: 30px; /* Agrega un margen derecho al input para que quepa el icono de editar */
+}
+
+.boton-centrado {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.update-btn {
+    background-color: transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.update-btn:hover {
+    color: #166fe5;
+}
+
+.success-message {
+    background-color: #e7f3ff;
+    border: 1px solid #1877f2;
+    color: #1877f2;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+
+/* Responsividad para pantallas pequeñas */
+/* Hacer que los campos se acomoden en pantallas pequeñas */
+@media (max-width: 768px) {
+    .half-width {
+        width: 100%;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    
+
+    /* Los inputs estarán habilitados en pantallas pequeñas */
+    .form-group input[disabled] {
+        cursor: not-allowed;
+    }
+
+    .input-icon input {
+        padding-right: 30px; /* Para que no se superponga el ícono */
+    }
+}
+
+@media (max-width: 480px) {
+    .tituloact {
+        font-size: 1.5rem;
+    }
+    
+    .profile-photo {
+        max-width: 100px;
+        height: auto;
+    }
+
+    .boton-centrado button {
+        width: 100%;
+    }
+}
+
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre los campos */
+}
+
+.half-width {
+    flex: 1;
+}
+
+
+.alert-danger {
+    color: red; /* Cambia el color del texto a rojo */
+    font-size: 14px; /* Ajusta el tamaño del texto, opcional */
+    margin-top: 5px; /* Agrega algo de espacio, opcional */
+}
+
+.input-icon {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon input {
+    width: 100%;
+    padding-right: 30px; /* Espacio para el ícono */
+}
+
+.input-icon .visibility-icon {
+    position: absolute;
+    top: 50%;
+    right: 40px; /* Ajustamos el ícono a la derecha */
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+

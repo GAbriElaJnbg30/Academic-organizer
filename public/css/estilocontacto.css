@@ -1,0 +1,84 @@
+.contact-carousel-container {
+    display: flex;
+    padding: 50px 50px 0px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.support-container {
+    backdrop-filter: blur(10px);
+    max-width: 350px;
+    height: 290px;
+    padding: 30px;
+    margin-top: -75px;
+    justify-content: center;
+    font-size: 14px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.carousel {
+    max-width: 350px;
+}
+
+.carousel img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.contact-options {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contact-options a {
+    background: rgba(157, 194, 246, 0.532);
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    color: #000000;
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.contact-options a:hover {
+    background: #2f05ff9b;
+}
+.contact-options i {
+    font-size: 22px;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-carousel-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .support-container {
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+    .carousel {
+        max-width: 100%;
+    }
+
+    .contact-options {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    .contact-options a i {
+        font-size: 20px;
+    }
+}

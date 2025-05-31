@@ -1,0 +1,583 @@
+/* ---------------------------------------------- Contenedor Principal ------------------------------------------------ */
+.contcrud {
+    margin: 2rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.options-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.btn-new {
+    background-color: #B0B0B0; /* Gris suave */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+.btn-new:hover {
+    background-color: #8C8C8C; /* Gris más oscuro para el hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave al pasar el ratón */
+}
+
+.btn-new:focus {
+    outline: none; /* Evitar el borde azul al hacer clic */
+}
+
+.search-bar input {
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.filter label {
+    margin-right: 5px;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.user-table th {
+    background-color: #f2f2f2;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.pagination li {
+    margin: 0 5px;
+    font-size: 18px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #007bff;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #f0f0f0;
+    color: #0056b3;
+}
+
+.pagination .active a {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination .disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination i {
+    vertical-align: middle;
+}
+
+/* -------------------------------------------- ALTA DE USUARIOS --------------------------------------------*/
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    overflow-y: auto; /* Habilitar scroll si el contenido excede el tamaño */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 30px;
+    border: none;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translate(-0%, 25%); /* Centra horizontal y verticalmente */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Grid layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns, 4), 1fr);
+    gap: 30px;
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon input {
+    padding-left: 35px; /* Espacio para el ícono a la izquierda */
+    padding-right: 35px; /* Espacio para el ícono a la derecha */
+}
+
+.input-icon i {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    color: gray;
+    font-size: 16px;
+}
+
+.input-icon .fa-lock,
+.input-icon .fa-user, 
+.input-icon .fa-user-circle,
+.input-icon .fa-envelope,
+.input-icon .fa-calendar,
+.input-icon .fa-venus-mars,
+.input-icon .fa-phone,
+.input-icon .fa-user-tag {
+    left: 10px; /* Ícono a la izquierda */
+}
+
+.input-icon .fa-eye-slash,
+.input-icon .fa-eye {
+    right: 30px; /* Ícono a la izquierda */
+    z-index: 1;
+}
+
+
+
+
+/* Ícono de edición afuera del input */
+.input-icon .edit-icon {
+    margin-left: -2px; /* Espacio entre el input y el ícono */
+    font-size: 18px; /* Tamaño del ícono */
+    color: #aaa;
+    cursor: pointer;
+}
+
+/* Efecto hover en el ícono */
+.input-icon .edit-icon:hover {
+    color: #333;
+}
+
+
+/* Estilo para selects en estado de solo lectura */
+select.readonly {
+    pointer-events: none; /* Desactiva interacciones */
+    background-color: #f5f5f5; /* Fondo más claro para simular deshabilitación */
+    color: #6c757d; /* Texto deshabilitado */
+    cursor: not-allowed; /* Muestra que no es editable */
+}
+
+/* Estilo para selects habilitados */
+select {
+    pointer-events: auto; /* Permite interacciones cuando se habilita */
+    background-color: #ffffff; /* Fondo normal */
+    color: #000000; /* Texto habilitado */
+    cursor: pointer; /* Muestra que es interactivo */
+}
+
+
+
+
+.form-group input,
+.form-group select {
+    width: calc(100% - 20px); /* Asegura que el ancho sea consistente */
+    padding: 10px 10px 10px 35px; /* Mantén el mismo padding */
+    margin-right: 10px; /* Agrega espacio entre elementos */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    appearance: none;
+    background-color: #fff;
+    box-sizing: border-box; /* Asegura que los paddings no afecten el ancho */
+}
+
+.form-group {
+    margin-bottom: 2px; /* Agrega espacio entre los grupos */
+}
+
+.form-group:last-child {
+    margin-right: 0; /* Asegura que el último elemento no tenga margen derecho */
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 3px;  /* Reduce el margen superior */
+    height: 10px; /* Reserva un espacio para los mensajes de error */
+}
+
+
+/* Button styles */
+.btn {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    width: 15%;
+    margin-top: 20px;
+    margin: 20px auto 0;    /* Centra el botón (auto en los márgenes izquierdo y derecho) */
+    display: block;    
+}
+
+.btn:hover {
+    background-color: #357abd;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .options-row {
+        flex-direction: column; /* Apilar los elementos verticalmente */
+        align-items: flex-start; /* Alineación a la izquierda */
+        gap: 1.5rem;
+    }
+
+    /* Estilo para la barra de búsqueda en pantallas pequeñas */
+    .search-bar input, .search-bar button, .filter select {
+        width: 100%; /* Hacer los elementos de búsqueda y filtro de ancho completo */
+        font-size: 14px;
+    }
+
+    /* Botón "Nuevo" más grande para pantallas pequeñas */
+    .btn-new {
+        width: 100%;
+        padding: 12px 15px;
+    }
+
+    /* Ajustes al filtro */
+    .filter {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* Media Query para pantallas móviles */
+@media (max-width: 480px) {
+    /* Ajuste adicional en pantallas muy pequeñas */
+    .search-bar input, .search-bar button, .filter select {
+        font-size: 12px;
+    }
+
+    .btn-new {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .filter label {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .user-table {
+        display: block;
+    }
+    .user-table th, .user-table td {
+        display: block;
+        width: 100%;
+    }
+    .user-table tr {
+        margin-bottom: 15px;
+    }
+    .user-table td {
+        border: none;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+    }
+    .user-table th {
+        display: none;
+    }
+    .user-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        padding-right: 10px;
+    }
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Cambiar el diseño para pantallas más pequeñas */
+    .user-table th, .user-table td {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .search-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Paginación en una sola fila */
+    .pagination {
+        flex-wrap: wrap;
+    }
+
+    .pagination li {
+        margin: 5px 2px;
+    }
+
+    /* Hacer que los botones de acción en la tabla se ajusten mejor */
+    .user-table td button {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}
+
+/* Media Query para pantallas móviles */
+@media (max-width: 480px) {
+    /* Reducir aún más el tamaño de los elementos */
+    .main-content {
+        margin: 10px;
+        padding: 5px;
+    }
+
+    .user-table th, .user-table td {
+        font-size: 10px;
+        padding: 3px;
+    }
+
+    .pagination li {
+        font-size: 10px;
+    }
+
+    button {
+        font-size: 12px;
+    }
+
+    /* Ajustar el filtro y la búsqueda en pantalla pequeña */
+    .search-bar input, .search-bar button, .filter select {
+        font-size: 12px;
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .filter label {
+        font-size: 12px;
+    }
+}
+
+
+/* --------------------------- boton limpiar y resetear ------------------------------- */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    padding: 5px 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#search-input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.search-button, .reset-button {
+    background-color: #2c85f3;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover, .reset-button:hover {
+    background-color: #455fa0;
+}
+
+.reset-button {
+    background-color: #f44336;
+}
+
+.reset-button:hover {
+    background-color: #e53935;
+}
+
+.search-button i, .reset-button i {
+    font-size: 16px;
+}
+
+/* ---------------------------------------- Filtro de Ordenación ----------------------------------------- */
+.filter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0px;
+}
+
+.filter label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-right: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-select {
+    font-size: 14px;
+    padding: 6px 10px;
+    width: 180px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    transition: border 0.3s ease, background-color 0.3s ease;
+    outline: none;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-select:focus {
+    border-color: #0056b3;
+    background-color: #f0f8ff;
+}
+
+.form-select option {
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .filter {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter label {
+        margin-bottom: 5px;
+    }
+}
+
+
+.delete {
+    color: red;
+}

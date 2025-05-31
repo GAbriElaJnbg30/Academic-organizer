@@ -1,0 +1,711 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --hover-color: #2980b9;
+    --background-color: #ecf0f1;
+    --text-color: #34495e;
+}
+
+.main-content {
+    padding: 0 !important;
+    margin: 0;
+}
+
+
+.principal-gestion {
+    display: flex;
+    flex-direction: row; /* Elementos en fila */
+    width: 100%;
+    height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+    overflow: hidden; /* Evita que elementos desborden */
+}
+
+.sidebar {
+    width: 200px; /* Tamaño fijo para la barra lateral */
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 20px;
+    height: 100%; /* Asegura que la altura cubra el contenedor principal */
+    flex-shrink: 0; /* Impide que la barra lateral se reduzca */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+    overflow-y: auto; /* Permite scroll si hay contenido adicional */
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: var(--primary-color);
+}
+
+.sidebar i {
+    margin-right: 5px;
+    width: 20px;
+}
+
+.main-content-dos {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    padding: 20px;
+}
+
+.action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--background-color);
+    border-radius: 20px;
+    padding: 5px 15px;
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.fa-check-square {
+    color:#2980b9;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.file-actions button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.file-actions button:hover {
+    background-color: var(--hover-color);
+}
+
+.file-actions {
+    display: flex;
+    gap: 15px; /* Agrega un espacio de 15px entre los botones */
+}
+
+.file-actions button {
+    padding: 10px 20px; /* Añade un poco de padding para hacer los botones más grandes */
+}
+
+.file-actions button i {
+    margin-right: 5px;
+}
+
+.view-options {
+    position: relative;
+    width: 140px;
+    font-family: Arial, sans-serif;
+}
+
+.custom-select {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.selected-option {
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.selected-option:hover {
+    background: #f1f1f1;
+}
+
+.selected-option .arrow {
+    margin-left: auto;
+    color: #666;
+}
+
+.selected-option i:first-child {
+    margin-right: 8px; /* Ajusta el valor según el espacio deseado */
+}
+
+.options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: 5px 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.options .option {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.options .option i {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+.options .option:hover {
+    background: #f1f1f1;
+}
+
+.options .option.active {
+    font-weight: bold;
+    background: #e0e0e0;
+}
+
+
+.file-selection {
+    font-weight: bold;
+}
+
+.file-selection {
+    display: flex;
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: 10px; /* Espacio entre el botón y el contador */
+}
+
+.btn-seleccionar-archivos {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #f0f0f0; /* Color blanco pero no tan blanco */
+    color: black; /* Letra en negro */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-seleccionar-archivos i {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+    color: rgb(1, 9, 173); /* Ícono de color personalizado */
+}
+
+.btn-seleccionar-archivos:hover {
+    background-color: #e0e0e0; /* Cambio de color al pasar el ratón */
+}
+
+.checkbox-carpeta {
+    margin: 0;
+    width: 15px;
+    height: 15px;
+}
+
+.file-display {
+    background-color: rgb(240, 240, 249);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.action-icons button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.action-icons button:hover {
+    color: var(--hover-color);
+}
+
+
+/*----------------------------------------------- Modal Crear Carpetas -------------------------------------------------*/
+/* Estilo para el fondo del modal */
+.modal {
+    display: none; /* Ocultamos el modal por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    z-index: 1000; /* Sobre otros elementos */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+/* Contenedor del contenido del modal */
+.modal-content {
+    background-color: #fff; /* Fondo blanco */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    width: 400px; /* Ancho del modal */
+    max-width: 90%; /* Ajuste en pantallas pequeñas */
+    text-align: center;
+}
+
+/* Título del modal */
+.modal-content h3 {
+    margin: 0 0 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Botones */
+.modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.guardar {
+    background-color: #3498db;
+}
+
+.guardar:hover {
+    background-color: #2980b9;
+}
+
+.cancelar {
+    background-color: rgb(185, 185, 185);
+}
+
+.cancelar:hover {
+    background-color: gray;
+}
+
+/* Contenedor del input */
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+/* Input de texto */
+.input-group input {
+    width: 100%;
+    padding: 10px 40px; /* Espacio para el ícono */
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Ícono dentro del input */
+.input-group i {
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Alineado a la izquierda del input */
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 1.2rem;
+    pointer-events: none; /* Para que no bloquee el clic dentro del input */
+}
+
+/* ------------------------------- Muestra las caerpetas en la vista ------------------------------------------- */
+/* Contenedor principal para las carpetas */
+.vista-mosaico {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Mantiene las carpetas alineadas al inicio */
+    gap: 13px; /* Espacio entre las carpetas */
+    padding: 1px;
+    background-color: rgb(255, 255, 255);
+    max-width: 100%; /* Evita que el contenedor se desborde horizontalmente */
+    background-color: rgb(240, 240, 249);
+    max-height: 400px; /* Altura máxima del contenedor */
+    overflow-y: auto; /* Habilitar el scroll vertical */
+}
+
+.carpeta.mosaico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    background-color: #f3f4f6;
+    border: 2px solid #d1d5db;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+/* Hover sobre la carpeta */
+.carpeta.mosaico:hover {
+    background-color: #d5dcf5; /* Cambio de color al pasar el cursor */
+}
+
+/* Icono de la carpeta */
+.icono-carpeta.mosaico {
+    font-size: 50px;
+    color: #6272eb; /* Color amarillo estilo carpeta */
+    margin-bottom: 10px;
+}
+
+/* Nombre de la carpeta */
+.nombre-carpeta.mosaico {
+    font-size: 14px;
+    color: black; /* Texto gris oscuro */
+    text-align: center;
+    word-wrap: break-word; /* Ajustar texto largo */
+    max-width: 100%; /* Evitar desbordamiento */
+}
+
+
+/* Contenedor de la lista */
+.vista-lista {
+    padding: 1px;
+    background-color: rgb(240, 240, 249);
+    max-height: 400px; /* Altura máxima del contenedor */
+    overflow-y: auto; /* Habilitar el scroll vertical */
+}
+
+/* Contenedor para cada fila de carpeta */
+.lista-carpetas {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    width: 100%; /* Evitar desbordamiento */
+}
+
+/* Fila de cada carpeta */
+.fila-carpeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye los elementos entre el espacio disponible */
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(4, 4, 4, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+/* Hover sobre la fila de la carpeta */
+.fila-carpeta:hover {
+    background-color: #d5dcf5; /* Cambio de color al pasar el cursor */
+}
+
+/* Icono de la carpeta */
+.icono-carpeta.lista {
+    font-size: 16px;
+    color: #6272eb; /* Color del icono */
+    margin-right: 15px;
+}
+
+/* Detalles de la carpeta */
+.detalles-carpeta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Nombre de la carpeta */
+.nombre-carpeta.lista {
+    font-size: 16px;
+    color: black;
+    margin-right: auto; /* Empuja la fecha hacia la derecha */
+}
+
+/* Fecha de creación */
+.fecha-creacion {
+    font-size: 14px;
+    color: #5e5e5e;
+    text-align: right; /* Alineación a la derecha */
+    white-space: nowrap; /* Evita que el texto se envuelva en múltiples líneas */
+}
+
+/* Estilo para una fila seleccionada o activa */
+.fila-carpeta.activa {
+    background-color: #c3dafe; /* Color para fila activa */
+}
+
+/* Estilos para la vista en lista */
+.vista-lista {
+    display: none;
+}
+
+/* Estilos para la vista en mosaico */
+.vista-mosaico {
+    display: none;
+}
+
+.vista-mosaico a {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Mantiene el color del texto establecido previamente */
+}
+
+.vista-lista a {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Mantiene el color del texto establecido previamente */
+}
+
+
+/* Mostrar vista en lista si el contenedor tiene la clase 'lista' */
+.contenedor-carpetas.lista .vista-lista {
+    display: flex;
+}
+
+/* Mostrar vista en mosaico si el contenedor tiene la clase 'mosaico' */
+.contenedor-carpetas.mosaico .vista-mosaico {
+    display: flex;
+}
+
+.checkbox-carpeta.lista {
+    width: 16px;  /* Ancho deseado */
+    height: 16px; /* Alto deseado */
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.btn-volver {
+    background-color: #b0b0b0fc;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #000000;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+}
+
+.btn-volver i {
+    font-size: 16px;  /* tamaño pequeño de la flecha */
+}
+
+.btn-volver:hover {
+    background-color: #636363;
+}
+
+
+
+
+
+
+
+.sidebar {
+    /* Establece una altura fija o máxima para la barra lateral */
+    height: 100vh; /* o cualquier valor en px, por ejemplo, 500px */
+    overflow-y: auto; /* Esto habilita el scroll vertical cuando sea necesario */
+    padding: 25px;
+}
+
+.lista-carpetas {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    max-height: 430px; /* Puedes ajustar la altura máxima según tu diseño */
+    overflow-y: auto; /* Habilita el scroll solo para la lista de carpetas */
+}
+
+.mis-carpetas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mis-carpetas-header a {
+    flex-grow: 1;
+    text-decoration: none;
+    color: inherit;
+}
+
+.toggle-btn {
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.hide {
+    display: none;
+}
+
+
+.hide {
+    display: none;
+}
+.subcarpetas {
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.carpeta-padre {
+    font-weight: bold;
+    
+    margin-left: 0px;
+    color: #007bff; /* Azul Bootstrap */
+}
+
+.subcarpetas {
+    margin-left: 10px;
+    margin-top: 10px;
+    
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content-dos {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .principal-gestion {
+        flex-direction: column;
+    }
+
+    .vista-mosaico {
+        margin-right: 10px;
+    }
+
+    .file-selection {
+        margin-left: 12px;
+    }
+
+    .file-actions button{
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

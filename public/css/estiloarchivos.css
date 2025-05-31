@@ -1,0 +1,162 @@
+/* ------------- Archivos dentro de la carpeta ------------- */
+.archivo-lista {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 100px;
+}
+
+.archivo-item {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 135px;
+    height: 135px;
+}
+
+.archivo-img {
+    max-width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+.archivo-icono {
+    font-size: 3rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.archivo-nombre {
+    font-size: 14px;
+    word-break: break-word;
+}
+
+
+
+
+
+
+.file-display {
+    max-height: 80vh;  /* o height: 600px; */
+    overflow-y: auto;
+    padding-right: 10px; /* opcional para espacio con el scrollbar */
+}
+
+
+
+
+
+
+
+/* ---------- VISTA EN MOSAICO ---------- */
+.vista-mosaico {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 100px;
+}
+
+.contenedor-archivos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.archivo-item.mosaico {
+    width: 180px;
+    height: 106px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.archivo-item.mosaico:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.archivo-icono {
+    font-size: 36px;
+    color: #4a4a4a;
+    margin-bottom: 8px;
+}
+
+.archivo-nombre {
+    font-size: 14px;
+    word-break: break-word;
+}
+
+/* ---------- VISTA EN LISTA ---------- */
+.vista-lista {
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.lista-archivos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.fila-archivo {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: background-color 0.2s;
+    
+}
+
+.fila-archivo:hover {
+    background-color: #f5f5f5;
+}
+
+.icono-archivo.lista {
+    width: 32px;
+    font-size: 24px;
+    color: #4a4a4a;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.nombre-archivo.lista {
+    font-size: 15px;
+    word-break: break-word;
+}
+
+/* ---------- OPCIONAL: Alternar vistas con clases ---------- */
+.vista-mosaico,
+.vista-lista {
+    display: none; /* ocultar por defecto */
+}
+
+.vista-activa {
+    display: flex !important; /* o block, según el diseño */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

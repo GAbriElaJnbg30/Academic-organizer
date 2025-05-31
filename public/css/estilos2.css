@@ -1,0 +1,555 @@
+/* Esta hoja de estilos se ocupa para:
+Todo lo del Registro
+Todo lo del Manual de Usuario Exterior
+Todo lo del Acerca De
+*/
+
+/* ---------------------------------------------------- Para el Registro ------------------------------------------------------- */
+/* Contenedor principal */
+.contprinregistro {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: auto; /* Altura completa de la pantalla */
+    background-color: white;
+    margin: 1rem;
+}
+
+.contregistro {
+    background-color: white;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.registro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    text-align: center;
+    color: black;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.input-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-registro {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-registro input, 
+.input-registro select {
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Estilo cuando el input o select está enfocado */
+.input-registro input:focus,
+.input-registro select:focus {
+    outline: none; /* Elimina el contorno por defecto */
+    border-color: #007bff; /* Borde azul cuando está seleccionado */
+}
+
+.input-registro i {
+    position: absolute;
+    padding-left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    font-size: 18px;
+    z-index: 1;
+    
+}
+
+.input-registro .error {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 0.25rem; /* Espacio entre el input y el mensaje de error */
+    word-break: break-word;
+    max-width: 100%; /* Ajusta al ancho del contenedor padre */
+}
+
+/* Ajusta la posición del icono cuando hay un error */
+.input-registro.error i {
+    top: 1.25rem; /* Ajusta este valor según sea necesario */
+}
+
+/* Ajusta la posición del icono cuando esta en la misma fila que un error */
+.input-registro i {
+    top: 1.2rem; /* Ajusta este valor según sea necesario */
+}
+
+.input-registro.error input {
+    border: 2px solid red;
+}
+
+.error {
+    max-width: 250px; /* Define un ancho máximo */
+    word-wrap: break-word; /* Permite romper palabras largas */
+    overflow-wrap: break-word; /* Soporte adicional para palabras largas */
+    font-size: 0.85rem;
+}
+
+.botones {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Añade espacio entre los botones si lo deseas */
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 0.7rem 1rem; /* Reducido el padding */
+    font-size: 1rem; /* Fuente más pequeña */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto; /* Ajusta el tamaño según el contenido */
+    min-width: 120px; /* El botón tendrá un ancho mínimo de 120px */
+    text-align: center; /* Asegura que el texto se centre dentro del botón */
+}
+
+.crear-cuenta {
+    background-color: #007bff; /* Azul para el botón Crear cuenta */
+    color: white;
+}
+
+.crear-cuenta:hover {
+    background-color: #0056b3; /* Un tono más oscuro al pasar el mouse */
+}
+
+.cancelar {
+    background-color: gray; /* Rojo para el botón Cancelar */
+    color: white;
+}
+
+.cancelar:hover {
+    background-color: rgb(95, 95, 95); /* Un tono más oscuro al pasar el mouse */
+}
+
+@media (max-width: 768px) {
+    .input-row {
+        flex-direction: column;
+    }
+
+    .contregistro {
+        width: 60%;
+    }
+
+    .input-registro.error input {
+        width: 335px;
+    }
+    
+}
+
+
+/* ----------------------------------------------- Para el manual de Usuario de fuera -------------------------------------------- */
+/* Estilos para el contenedor principal */
+.vista-manual {
+    display: flex; /* Activa flexbox */
+    gap: 20px; /* Espaciado entre contenedores */
+    justify-content: space-between; /* Asegura separación horizontal */
+    align-items: stretch; /* Ambos contenedores tendrán la misma altura */
+    margin: 1rem;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.contenedor-uno {
+    width: 40%; /* Ocupa el 30% del ancho disponible */
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    align-items: center; 
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-manual {
+    text-align: center; /* Centrar el texto */
+    font-size: 20px; /* Cambiar el tamaño del texto (puedes ajustarlo según prefieras) */
+    color: black; /* Color negro */
+    font-weight: bold; /* Opcional: hacer el texto más llamativo */
+    margin-bottom: 1.5rem; /* Opcional: espacio inferior */
+}
+
+.contenedor-uno .ajustar-margen {
+    margin-top: 74px; /* Ajusta este valor según necesites */
+}
+
+.informacion-manual {
+    text-align: justify; /* Alineación justificada para un acabado profesional */
+    font-size: 0.85rem; /* Tamaño ideal para lectura cómoda */
+    line-height: 1.4; /* Espaciado entre líneas para mejorar la legibilidad */
+    color: #252525; /* Color suave para texto */
+    margin-bottom: 1rem;
+}
+
+.informacion-manual p {
+    margin-bottom: 1.5rem; /* Epaciado entre párrafos */
+}
+
+.btn-manualpdf {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 0.55rem 1.3rem;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-manualpdf:hover {
+    background-color: #555;
+}
+
+.iconpdf {
+    font-size: 1.2rem;
+    color: red;
+}
+
+.contenedor-dos {
+    width: 60%; /* Ocupa el 60% del ancho disponible */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    background-color: white;
+
+    /* Flexbox para centrar contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+.contenedor-video {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    margin: 0; /* Elimina márgenes adicionales */
+}
+
+
+/* Video */
+.video-tutorial {
+    width: 80%; /* Ajusta el ancho del video */
+    max-width: 800px; /* Máximo tamaño del video */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-bottom: 1rem;
+}
+
+/* Botón de descarga */
+.btn-descargar {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.btn-descargar:hover {
+    background-color: #0056b3;
+}
+
+.btn-descargar .icon {
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .contenedor-uno, .contenedor-dos {
+        width: 92%; /* Ocupa todo el ancho */
+        margin: 0; /* Asegúrate de centrarlo */
+    }
+
+    .vista-manual {
+        flex-direction: column; /* Asegura que los elementos se apilen */
+    }
+}
+
+
+/* ---------------------------------------------------- Para el Acerca De ------------------------------------------------------- */
+.contenedor-acercade,
+.contenedor-acercade * {
+    box-sizing: border-box;
+}
+
+.contenedor-acercade {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0;
+    align-items: center;
+}
+
+.cont-carrusel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    background-color: white;
+    margin-top: 1rem;
+}
+
+.carrusel {
+    display: flex;
+    width: calc(100%); /* Refleja las imágenes duplicadas */
+    transition: transform 0.5s ease-in-out, 0.5s ease-in-out;
+    opacity: 1; /* Establece opacidad inicial */
+    background-color: white; /* Igual al contenedor para evitar parpadeos */
+}
+
+.slider-section {
+    width: calc(100%); /* Ajusta el ancho individual de cada imagen */
+    flex-shrink: 0;
+}
+
+.slider-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.btn-left,
+.btn-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.btn-left {
+    left: 10px;
+}
+
+.btn-right {
+    right: 10px;
+}
+
+.texto-ao {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    background: linear-gradient(to bottom, black, white);
+    margin: 1rem;
+    padding: 20px;
+}
+
+
+
+
+
+
+/* Animación para que el contenedor se deslice suavemente al aparecer */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .cont-carrusel {
+        height: 200px; /* Reduce la altura del carrusel */
+    }
+
+    .btn-left,
+    .btn-right {
+        font-size: 1.5rem; /* Botones más pequeños */
+        padding: 5px;
+    }
+
+    .texto-ao {
+        margin: 0 2rem; /* Reduce los márgenes */
+        font-size: 0.9rem; /* Texto más pequeño */
+    }
+
+    .texto-ao h2 {
+        font-size: 1.5rem; /* Encabezado más pequeño */
+    }
+}
+
+/* Media queries para pantallas extra pequeñas */
+@media (max-width: 480px) {
+    .cont-carrusel {
+        height: 200px; /* Altura aún menor para móviles */
+    }
+
+    .btn-left,
+    .btn-right {
+        font-size: 1.2rem; /* Botones más pequeños */
+    }
+
+    .texto-ao {
+        margin: 0 1rem; /* Márgenes reducidos */
+        font-size: 0.8rem; /* Texto más pequeño */
+    }
+
+    .texto-ao h2 {
+        font-size: 1.2rem; /* Encabezado más pequeño */
+    }
+}
+
+.img-manual {
+    width: 300px;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 40px;
+}
+
+.card {
+    width: 400px;
+    height: 450px;
+    perspective: 1000px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    position: relative;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.529);
+}
+
+.card-front {
+    background-color: #f9f6f6b8;
+}
+
+.card-front h2 {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.821);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 90%;
+    font-size: 18px;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-back {
+    background: #f1f1f1;
+    transform: rotateY(180deg);
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4; 
+}
+
+.card-back ul {
+    text-align: justify;
+    padding-left: 20px; /* Opcional: Ajusta la indentación */
+    padding-right: 20px; /* Opcional: Evita que el texto toque los bordes */
+}
+
+.contenedor-texto-acecade {
+    text-align: center;
+    /* Si quieres ajustar márgenes o padding, puedes hacerlo aquí */
+    margin: 0 auto; 
+    padding: 10px;
+  }
+  

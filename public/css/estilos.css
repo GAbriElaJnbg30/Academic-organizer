@@ -1,0 +1,391 @@
+/* Esta hoja de estilos se ocupa para:
+Menú y Footer:
+- Inicio Sesión
+- Registrarse
+- Olvido Contraseña
+- Recuperar cuenta
+- Acerca De
+- Manual de Usuario Exterior
+- Contactenos
+
+Todo lo del Inicio de Sesión
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* -------------------------------------------------------- LOGOS -------------------------------------------------------------- */
+.logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logos img {
+    max-height: 65px;
+    width: auto;
+    margin: 0.5rem;
+}
+
+.left-logos {
+    display: flex;
+    gap: 2rem; /* Maneja el espaciado entre los logos */
+}
+
+/*------------------------------------------------------------- MENÚ -------------------------------------------------------------*/
+.header {
+    background-color: black;
+    color: white;
+    padding: 1.3rem;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;  /* Centra los elementos de la nav horizontalmente */
+    align-items: center;      /* Centra los elementos de la nav verticalmente */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 3rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem; /* Fija el padding desde el principio */
+    box-sizing: border-box; /* Asegura que el tamaño del enlace incluya padding y bordes */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    cursor: pointer;
+    color: white; /* Mantén el color del texto legible */
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin-bottom: 4px;
+    border-radius: 5px;
+}
+
+/*---------------------------------------------------- CONTENEDOR PRINCIPAL ------------------------------------------------------*/
+.contprincipal{
+    background-color: white;
+    margin: 1rem;
+    display: flex; /* Para que las cajas internas se alineen correctamente */
+    flex-direction: row; /* Eje principal horizontal */
+}
+
+/*---------------------------------------------------- CONTENEDOR IZQUIERDA -------------------------------------------------------*/
+.contizquierda {
+    background-color: white;
+    margin: 1rem;
+    padding: 0rem; /* Añade espacio interno */
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Disposición vertical */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center;
+}
+
+.imagenlogo img {
+    width: 400px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    margin-bottom: 1rem; /* Espacio entre imagen y texto */
+}
+
+.textologo {
+    line-height: 2; /* Espaciado entre líneas */
+    margin: 0; /* Elimina espacio externo */
+    padding: 0; /* Elimina espacio interno */
+    text-align: center; /* Centra el texto */
+}
+
+.textologo p {
+    margin: 0; /* Elimina márgenes de los párrafos */
+}
+
+.eslogan1 {
+    font-size: 26px; /* Tamaño del texto */
+    color: black;
+}
+
+.eslogan2 {
+    font-size: 20px; /* Tamaño del texto */
+    color: black;
+}
+
+
+/*------------------------------------------------------ CONTENEDOR LOGIN -------------------------------------------------------*/
+.contlogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 1rem;
+    flex: 1;
+    width: 100px; /* Ajusta según lo que necesites */
+    height: auto; /* Ajusta según lo que necesites */
+}
+
+.login-form {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    width: 350px;
+    text-align: center;
+}
+
+.login-form h2 {
+    margin-top: 0.6rem;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    color: black;
+}
+
+/* Estilo para mostrar los errores en color rojo */
+.alert-danger {
+    color: red;
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+/* Asegúrate de que este CSS esté correctamente cargado */
+.input-container input.error {
+    border: 2px solid red; /* Cambia el borde a rojo */
+    outline: none; /* Evita el borde azul del navegador */
+}
+
+.form-group {
+    margin-bottom: 20px; /*-- espacio entre los input --*/
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    color: black;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #007bff; /* Pinta el contorno cuando se selecciona ese input */
+}
+
+.input-container input {
+    width: 60%;
+    padding: 10px;
+    padding-left: 3rem;
+    padding-right: 1rem;;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.input-container {
+    position: relative;
+    align-items: center;
+}
+
+.input-container i.icon {
+    position: absolute;
+    left: 3.4rem; /* Ajusta la distancia del icono desde el borde izquierdo */
+    top: 1rem;
+    font-size: 18px; /* Tamaño del icono */
+    color: black;
+}
+
+.botonlogin {
+    width: 50%;
+    padding: 10px;
+    margin-top: 0.2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.form-footer {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: black;
+}
+
+.form-footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/*------------------------------------------------------------ FOOTER ----------------------------------------------------------*/
+.footer {
+    background-color: black;
+    color: white;
+    padding: 2rem 1rem;
+    transition: margin-left 0s;
+}
+
+.footer.shifted {
+    margin-left: 220px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #555;
+}
+
+@media (max-width: 768px) {
+    .logos .sep {
+        display: none;
+    }
+
+    .contizquierda {
+        display: none;
+    }
+
+    .header {
+        position: relative;
+        padding: 1.5rem;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+        box-sizing: border-box;
+        gap:0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 1rem;
+        border-bottom: 1px solid white; /* Línea blanca */
+        display: block; /* Hace que el enlace ocupe todo el área del <li> */
+    }
+    .nav-links a:hover {
+        background-color: #555;
+        padding: 1rem;
+        cursor: pointer;
+    }
+
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .contprincipal {
+        flex-direction: column; /* Cambiar a una sola columna */
+    }
+
+    .contizquierda {
+        flex: none; /* Cambia a diseño en fila para pantallas grandes */
+        justify-content: space-between; /* Espacia elementos en fila */
+        padding: 2rem; /* Más espacio interno */
+    }
+
+    .contlogin {
+        flex: none; /* Quitar flexibilidad */
+        padding: 0rem; /* Más espacio interno */
+        width: 93%; /* Cada uno ocupa todo el ancho */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Apilar contenido en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
