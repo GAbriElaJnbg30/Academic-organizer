@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('iniciarsesion');
 })->name('iniciarsesion');
 
+
+
 Route::get('/acerca-de', function () {
     return view('acercade');
 })->name('acercade');
