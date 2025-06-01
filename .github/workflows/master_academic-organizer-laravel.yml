@@ -29,12 +29,9 @@ jobs:
         with:
           files: 'composer.json'
 
-      - name: Install PHP dependencies (with Composer)
+      - name: Run composer install if composer.json exists
         if: steps.check_files.outputs.files_exists == 'true'
-        run: | 
-            curl -sS https://getcomposer.org/installer | php
-            php composer.phar install --no-dev --optimize-autoloader
-
+        run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
@@ -67,9 +64,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C51196776F434A83A9430A3A6C2F985C }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_9AB8ED951DC04B5F99E65232A4BF2F72 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3795F658D1634719B10DD860D9259832 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_FCA57171EFED45BFB7685C1426F9B855 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_14DB162995624F788803765319971C85 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6DC1048D9B814BCEBCA8EE9ADA9CD705 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
