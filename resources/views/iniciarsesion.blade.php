@@ -56,7 +56,7 @@
         <div class="contizquierda">
             <!------------------------------------------- IMAGEN LOGO -------------------------------------------------------->
             <div class="imagenlogo">
-                <img src="/sitioweb/public/imagenes/ao.png" alt="Imagen 5">
+                <img src="{{ asset('imagenes/ao.png') }}" alt="Imagen 5" class="logo">
             </div>
 
             <!-------------------------------------------- TEXTO LOGO -------------------------------------------------------->
