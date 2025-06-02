@@ -18,6 +18,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         URL::forceScheme('https');
+        ini_set('upload_max_filesize', '100M');
+        ini_set('post_max_size', '100M');
     }
 
     /**
